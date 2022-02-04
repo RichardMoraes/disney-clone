@@ -1,0 +1,22 @@
+:root {
+    --prev-carousel-image: none;
+    --next-carousel-image: none;
+  }
+
+::ng-deep body {
+    margin: 0;
+    background: #000;
+    position: fixed;
+    height: 100vh;
+    top: 0px;
+    transition: opacity 200ms ease 0s;
+    width: 100%;
+    z-index: -3;
+    font-family: Avenir-Roman,sans-serif;
+
+    .container-body {
+        background: url("../assets/background.png") 50%/cover no-repeat fixed;
+        height: 100vh;
+        width: 100%;
+    }
+}

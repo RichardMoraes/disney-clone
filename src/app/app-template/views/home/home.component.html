@@ -1,0 +1,32 @@
+<div class="home-container">
+    <p-carousel [value]="items"
+    [circular]="true" 
+    [autoplayInterval]="carouselInterval"
+    [responsive]="true"
+    effectDuration="slow"
+    [autoplayInterval]="3000"
+    (onPage)="changePage($event)">
+        <ng-template let-item pTemplate="item">
+            <div class="item-image-container">
+                <div>
+                    <img class="item-image" [src]="activeCaroulselPage">
+                    <img class="item-overlay" [src]="item.overlay" [style]="item.overlayStyle" 
+                    [ngClass]="[activeCaroulselPage === item.image ? 'item-active' : '']">
+                    <h4 [ngClass]="[activeCaroulselPage === item.image ? 'item-active' : '']">
+                        <span style="display: block;">
+                            {{item.subtitle}}
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+    
+    <div class="channel-container">
+        <div *ngFor="let channel of channels" 
+        class="channel-card">
+            <img [src]="channel.image">
+            <video [src]="channel.video"loop autoplay playsinline></video>
+        </div>
+    </div>
+</div>
